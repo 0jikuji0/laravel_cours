@@ -8,7 +8,7 @@
     }">
         <button 
         class="btn btn-primary"
-        x-on:click="open = !=open"
+        x-on:click="open = !open"
         >
         Toggle content</button>
         <div x-show="open">
