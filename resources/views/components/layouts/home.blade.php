@@ -12,24 +12,16 @@
             <div class="flex items-center justify-between">
                 <h1 class="text-xl font-bold text-gray-800">Cours ESGI - Laravel</h1>
                 <ul class="flex space-x-6">
-                    <x-nav-link href="/" :active="Route::is('welcome')">
-                        Accueil
-                    </x-nav-link>
-                    <x-nav-link href="/about" :active="Route::is('about')">
-                        À propos
-                    </x-nav-link>
-                    <x-nav-link href="/contact" :active="Route::is('contact')">
-                        Contact
-                    </x-nav-link>
-                    <x-nav-link href="/projects" :active="Route::is('projects')">
-                        Projects
-                    </x-nav-link>
+                    <x-nav.link :href="route('home')">Accueil</x-nav.link>
+                    <x-nav.link :href="route('about')">À propos</x-nav.link>
+                    <x-nav.link :href="route('projects.index')">Projets</x-nav.link>
+                    <x-nav.link :href="route('contact')">Contact</x-nav.link>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="container mx-auto px-4 py-8 flex-1">
+    <main class="container flex-1 mx-auto px-4 py-8">
         {{ $slot }}
     </main>
 

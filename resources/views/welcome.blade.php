@@ -16,7 +16,7 @@
         Toggle content
         </button>
         <div x-show="open" x-collapse>
-            <div class="px-4 py-2">My content</div> <!-- open animation with alpinejs use collapse-->
+            <div class="px-8 py-2">My content</div> <!-- open animation with alpinejs use collapse-->
         </div>
     </div>
 </x-layouts.home>
