@@ -6,7 +6,7 @@
     <title>{{ $title ?? 'Cours ESGI' }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-50 min-h-screen flex flex-col">
     <header class="bg-white shadow">
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
@@ -21,12 +21,15 @@
                     <x-nav-link href="/contact" :active="Route::is('contact')">
                         Contact
                     </x-nav-link>
+                    <x-nav-link href="/projects" :active="Route::is('projects')">
+                        Projects
+                    </x-nav-link>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-8 flex-1">
         {{ $slot }}
     </main>
 
