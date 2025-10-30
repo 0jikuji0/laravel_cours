@@ -13,15 +13,19 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/project', function () {
-    $model = new Project();
-    $projects = $model->getAll();
+    $projects = Project::all();
+    // $model = new Project();
+    // $projects = $model->getAll();
+    // dd($project);
     return view('projects.index', compact('projects'));
 })->name('projects.index');
 
 Route::get('/project/{id}', function (int $id) {
-    $model = new Project();
-    $project = $model->retrieve($id);
-
+    $project = Project::find($id);
+    // $model = new Project();
+    // $project = $model->retrieve($id);
+    // dd($project);
+    // dd($project);
     return view('projects.show', compact('project'));
 })->name('projects.show');
 

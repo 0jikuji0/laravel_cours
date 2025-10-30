@@ -7,31 +7,25 @@ use Illuminate\Support\Arr;
 
 class Project extends Model
 {
-    public function getAll(): array | null
-    {
-        return [
-            0 => [
-                'title' => 'Application laravel',
-                'technologies' => ['Laravel', 'AlpineJS', ' TailwindCSS'],
-            ],
+    /* The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'title',
+        'description',
+        'technologies',
+        'status',
+        'start_date',
+        'end_date',
+    ];
 
-            1 => [
-                'title' => 'To do list',
-                'technologies' => ['Laravel', 'Vuejs', ' TailwindCSS'],
-            ],
-        ];
-    }
-
-    public function retrieve(int $id): array | null
-    {
-
-        $projects = $this->getAll();
-
-        $project = Arr::get($projects, $id, [
-            'title' => 'Projet non trouvé',
-            'technologies' => [],
-        ]);
-
-        return $project;
-    }
+    protected $casts = [ 
+        'technologies' => 'array',
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'created_at' => 'datetime',
+    ];
+    
+    
 }
